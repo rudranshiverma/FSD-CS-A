@@ -10,14 +10,28 @@
         }
     </style>
 </head>
-<body>
-    <div id="div1">
+<body id="id1">
+    <!-- <div id="div1">
         <button onclick="abes()">click</button>
         <p id="id2"> </p>
     </div>
     <script>
         function abes(){
             document.getElementById("id2").innerHTML="hello";
+        }
+    </script> -->
+    <button onclick="red()">RED</button>
+    <button onclick="green()">GREEN</button>
+    <button onclick="blue()">BLUE</button>
+    <script>
+        function red(){
+            document.getElementById("id1").style.backgroundColor="red";
+        }
+        function green(){
+            document.getElementById("id1").style.backgroundColor="green";
+        }
+        function blue(){
+            document.getElementById("id1").style.backgroundColor="blue";
         }
     </script>
 </body>
