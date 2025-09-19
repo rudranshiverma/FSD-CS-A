@@ -1,9 +1,85 @@
-<html>
-    <title>abes</title>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .header {
+      background: lightblue;
+      padding: 10px;
+      text-align: center;
+    }
+    .nav{
+        background-color: aliceblue;
+        text-align: center;
+        padding: 20px;
+    }
+    .nav a{
+        margin:120px;
+        text-decoration: none;
+    }
+    
+
+    .main {
+      display: flex;              
+      flex: 1;                
+    }
+
+    .menu {
+      width: 15%;
+      background: peachpuff;
+      padding: 10px;
+    }
+
+    .content {
+      flex: 1;                    
+      background: white;
+      border: 2px solid red;
+      padding: 10px;
+    }
+
+    .sidebar {
+      width: 20%;
+      background: lightgray;
+      padding: 10px;
+    }
+
+    .footer {
+      background: lightcoral;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-    
+  <div class="container">
+    <div class="header">ABES Ghaziabad</div>
+    <div class="nav">
+       <a href=aboutus.html>About Us</a>
+       <a href=contactus.html>Contact Us</a>
+       <a href=register.html>Register</a>
+       <a href=login.html>Login</a>
+    </div>
+    <div class="main">
+      <div class="menu">Menu</div>
+      <div class="content">Content</div>
+      <div class="sidebar">Sidebar</div>
+    </div>
+    <div class="footer">Footer</div>
+  </div>
 </body>
 </html>
