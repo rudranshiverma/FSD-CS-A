@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Changer App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 40px;
+      background-color: #f5f5f5;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    header img {
+      width: 40px;
+      height: 40px;
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #333;
+    }
+
+    #image-container img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .buttons {
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div id="image-container">
+    <img id="main-image" src="images/292677-3840x2160-desktop-4k-london-background-image.jpg" alt="Slideshow Image">
+  </div>
+
+  <div class="buttons">
+    <button onclick="changeImage()">Change Image</button>
+  </div>
+
+  <script>
+    const images = [
+      "images/951110.jpg",
+      "images/amsterdam-canal-sunset-houses-wallpaper-preview.jpg",
+      "images/europe-3trlw1j33gwm6xda.jpg",
+      "images/london-bridge-united-kingdom-river-thames-night-time-1920x1200-3316.jpg"
+    ];
+
+    let currentIndex = 0;
+    const mainImage = document.getElementById("main-image");
+
+    function changeImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      mainImage.src = images[currentIndex];
+    }
+  </script>
+
+</body>
+</html>

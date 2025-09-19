@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+    <style>
+    header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+    #counter{
+        font-size: 50px;
+        margin-bottom: 20px;
+        color: beige;
+        text-align: center;
+    }
+    .buttons{
+        display: flex;
+        gap: 0px;
+        text-align: center;
+    }
+    button {
+      font-size: 24px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #007BFF;
+      color: white;
+      transition: background 0.2s;
+      margin-left: 500px;
+    }
+    </style>
+</head>
+<body style="background-color: black;">
+    <header>
+        <img src="img1.jpg" style="width: 100px; height: 100px; border-radius: 50%;">
+        <h1 style="color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Counter App</h1>
+    </header>
+    <div id="counter">0</div>
+    <div class="buttons">
+        <button onclick="decrement()">-</button>
+        <button onclick="increment()">+</button>
+    </div>
+    <script>
+        let count=0;
+        const counterDisplay=document.getElementById("counter");
+        function updateDisplay(){
+            counterDisplay.textContent=count;
+        }
+        function increment(){
+            if(count<10){
+                count++;
+                updateDisplay();
+            }else{
+                alert("Maximum Limit Reached!");
+            }
+        }
+        function decrement(){
+            if(count>0){
+                count--;
+                updateDisplay();
+            }
+        } 
+    </script>
+</body>
+</html>
