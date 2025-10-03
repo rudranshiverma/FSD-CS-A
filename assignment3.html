@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f4f4f4;
+    }
+    .container {
+      display: flex;
+      gap: 20px;
+      align-items: stretch;
+    }
+    .card {
+      flex: 1;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 8px;
+      background: rgb(71, 34, 34);
+      box-sizing: border-box;
+      color: white;
+    }
+    .profile {
+      text-align: center;
+      width: 500px;
+      
+    }
+    .profile img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+    }
+    .profile h1 {
+      font-size: 24px;
+      color: white;
+      display: inline-block;
+      margin: 10px 0 5px;
+    }
+    .profile p {
+      color: white;
+    }
+    .profile ul {
+      list-style: disc;
+      padding-left: 20px;
+      text-align: left;
+      display: inline-block;
+      color: white;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      color: white;
+    }
+    input, button {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    button {
+      background: #007bff;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card profile">
+      <img src="profile.jpg" alt="Profile">
+      <h1 id="displayName"></h1>
+      <p id="displayClass"></p>
+      <br>
+      <ul id="displaySkills"></ul>
+      <p id="displayAddress"></p>
+    </div>
+    <div class="card">
+      <h2>Card Details</h2>
+      <form id="detailsForm">
+        <input type="text" id="name" placeholder="Enter Name" required>
+        <input type="text" id="class" placeholder="Enter Class" required>
+        <input type="text" id="skill1" placeholder="Programming Skill 1">
+        <input type="text" id="skill2" placeholder="Programming Skill 2">
+        <input type="text" id="skill3" placeholder="Programming Skill 3">
+        <input type="text" id="address" placeholder="Address">
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    const form = document.getElementById('detailsForm');
+    const displayName = document.getElementById('displayName');
+    const displayClass = document.getElementById('displayClass');
+    const displaySkills = document.getElementById('displaySkills');
+    const displayAddress = document.getElementById('displayAddress');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      displayName.textContent = document.getElementById('name').value;
+      displayClass.textContent = document.getElementById('class').value;
+      displaySkills.innerHTML = '';
+      [document.getElementById('skill1').value, document.getElementById('skill2').value, document.getElementById('skill3').value]
+        .filter(skill => skill.trim() !== '')
+        .forEach(skill => {
+          const li = document.createElement('li');
+          li.textContent = skill;
+          displaySkills.appendChild(li);
+        });
+        displayAddress.textContent = document.getElementById('address').value;
+    });
+  </script>
+</body>
+</html>
